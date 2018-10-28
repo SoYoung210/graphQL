@@ -1,3 +1,4 @@
+// mutaition : db의 상태가 변할 때 사용되는 것.
 export let movies = [
   {
     id: 0,
@@ -30,15 +31,25 @@ export const getById = id => {
   const filteredMovie = movies.filter(movie => id === movie.id)
   return filteredMovie[0]
 }
-export const deleteMove = id => {
-  //id로 0번이 오면 1,2,3 에 해당하는 영화를 지우는 함수이다.
+export const deleteMovie = id => {
+  //id로 0번이 오면 0번에 해당하는 영화 지움. 0번이 아닌것만 filtered에 담고
+  //movies 에 덮어써버림.
   const cleanedMovies = movies.filter(movie => movie.id !== id)
-  if (movies.legnth > cleanedMovies.legnth) {
+  if (movies.length > cleanedMovies.length) {
     movies = cleanedMovies
     return true
   } else {
     return false
   }
+}
+export const addMovie = (name, score) => {
+  const newMovie = {
+    id: parseInt(`${movies.legnth}+1`),
+    name,
+    score
+  }
+  movies.push(newMovie)
+  return newMovie
 }
 /*
 export const getById = id => {
