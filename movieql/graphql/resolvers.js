@@ -8,15 +8,7 @@ const soyoung = {
 const resolvers = {
   Query: {
     //name: () => "soyoung"
-    movies: () => getMovies(),
-    //same , person : (_,arg.id) => getById(arg.id)
-    movie: (_, { id }) => getById(id)
-
-    //person: () => soyoung
-  },
-  Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score),
-    deleteMovie: (_, { id }) => deleteMovie(id)
+    movies: () => getMovies()
   }
 }
 
