@@ -1,4 +1,4 @@
-import { people, getById } from "../db"
+import { getMovies, getById } from "../db"
 /*
 const soyoung = {
   name: "Soyoung",
@@ -8,9 +8,9 @@ const soyoung = {
 const resolvers = {
   Query: {
     //name: () => "soyoung"
-    people: () => people,
+    movies: () => getMovies(),
     //same , person : (_,arg.id) => getById(arg.id)
-    person: (_, { id }) => getById(id)
+    movie: (_, { id }) => getById(id)
 
     //person: () => soyoung
   }
