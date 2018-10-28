@@ -8,7 +8,8 @@ const soyoung = {
 const resolvers = {
   Query: {
     //name: () => "soyoung"
-    movies: () => getMovies()
+    ///_는 파라미터 이름.
+    movies: (_, { limit, rating }) => getMovies(limit, rating)
   }
 }
 
